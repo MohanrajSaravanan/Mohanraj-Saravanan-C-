@@ -1,0 +1,28 @@
+using System;
+using System.Text.RegularExpressions;
+using System.Collections.Generic;
+public class Program
+    {
+        public static Boolean validatePassword(string password)
+        {
+            Regex regex = new Regex("^[A-Z][\\S][A-Za-z0-9_@#%!]{8,15}$");
+            return regex.IsMatch(password);
+        }
+
+
+        static void Main(string[] args)
+        {
+            Console.WriteLine("Password Validation:");
+            Console.WriteLine("Enter Password to be validated:");
+            string Password = Console.ReadLine();
+
+            if (validatePassword(Password))
+            {
+                Console.WriteLine("Password is valid..");
+            }
+            else
+            {
+                Console.WriteLine("Password is invalid");
+            }
+        }
+    }
